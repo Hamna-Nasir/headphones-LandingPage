@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="output.css" rel="stylesheet" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.156.1/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.156.1/examples/jsm/"
+      }
+    }
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+  <title>3D Interactive Headphones Landing Page</title>
+</head>
+
+<body class="bg-gradient-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#000000] text-[#E5E5E5] min-h-screen overflow-hidden">
+
+  <!-- Navbar -->
+  <nav
+    class="fixed top-0 left-0 w-full bg-black bg-opacity-70 backdrop-blur-md flex justify-between items-center h-18 md:h-20 z-50 px-6 md:px-16 border-b border-[#FFD700]/20">
+    <h1
+      class="text-xl md:text-3xl font-extrabold bg-gradient-to-r from-[#FFD700] via-[#D4AF37] to-[#FFD700] bg-clip-text text-transparent drop-shadow-[0_0_10px_#FFD70060]">
+      ThunderBeats
+    </h1>
+    <div class="hidden md:flex space-x-6">
+      <a href="#home" class="font-semibold text-lg hover:text-[#FFD700] transition-colors">Home</a>
+      <a href="#features" class="font-semibold text-lg hover:text-[#D4AF37] transition-colors">Features</a>
+      <a href="#showcase" class="font-semibold text-lg hover:text-[#FFD700] transition-colors">Showcase</a>
+      <a href="#shopnow" class="font-semibold text-lg hover:text-[#D4AF37] transition-colors">Shop Now</a>
+    </div>
+    <div class="md:hidden" id="menu-btn">
+      <i class="fa-solid fa-bars text-white text-2xl" id="menu-icon"></i>
+    </div>
+  </nav>
+
+  <div id="mobile-menu"
+    class="hidden flex-col bg-[#1a1a1a]/90 p-4 space-y-4 md:hidden transition-all duration-300 ease-in-out cursor-pointer sticky top-[80px] z-40">
+    <a href="#home" class="text-white flex items-center font-bold justify-center text-center hover:text-[#FFD700]">Home</a>
+    <a href="#features" class="text-white flex items-center font-bold justify-center text-center hover:text-[#D4AF37]">Features</a>
+    <a href="#showcase" class="text-white flex items-center font-bold justify-center text-center hover:text-[#FFD700]">Showcase</a>
+    <a href="#shopnow" class="text-white flex items-center font-bold justify-center text-center hover:text-[#D4AF37]">Shop Now</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home"
+    class="flex flex-col md:flex-row justify-center items-center min-h-screen pt-24 md:pt-20 px-4 md:px-10 overflow-hidden">
+
+    <!-- Left: Canvas + Color Picker -->
+    <div class="flex flex-col items-center w-full md:w-1/2 relative mb-8 md:mb-0">
+      <div
+        class="relative w-[90vw] h-[280px] sm:h-[340px] md:w-[520px] md:h-[480px] lg:w-[580px] lg:h-[520px] bg-[#1a1a1a]/80 rounded-2xl flex items-center justify-center shadow-[0_0_25px_#FFD70040]">
+        <canvas id="headphones-canvas"
+          class="w-full h-full rounded-xl shadow-lg relative z-10 pointer-events-auto bg-[#0f0f0f]/80">
+        </canvas>
+      </div>
+
+      <!-- Color Picker -->
+      <!-- Color Picker -->
+<div id="color-picker" class="flex space-x-4 justify-center mt-4">
+  <div data-color="#0A0A0A" style="background-color:#0A0A0A;"
+    class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-[#FFD700]/80 cursor-pointer transition-all duration-200 hover:scale-110 active:scale-95 shadow-[0_0_15px_#FFD70060]">
+  </div>
+  <div data-color="#C0C0C0" style="background-color:#C0C0C0;"
+    class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-[#D4AF37]/70 cursor-pointer transition-all duration-200 hover:scale-110 active:scale-95 shadow-[0_0_15px_#D4AF3760]">
+  </div>
+  <div data-color="#E6B7A9" style="background-color:#E6B7A9;"
+    class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-[#FFD700]/70 cursor-pointer transition-all duration-200 hover:scale-110 active:scale-95 shadow-[0_0_15px_#FFD70060]">
+  </div>
+  <div data-color="#1E3A8A" style="background-color:#1E3A8A;"
+    class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-[#D4AF37]/80 cursor-pointer transition-all duration-200 hover:scale-110 active:scale-95 shadow-[0_0_15px_#FFD70060]">
+  </div>
+</div>
+
+
+      <p class="text-sm md:text-lg text-center mt-3 text-gray-400">
+        Tap a color — see your headphones come alive.
+      </p>
+    </div>
+
+    <!-- Right: Text -->
+    <div class="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center items-center px-4 md:px-10">
+      <div class="flex flex-col md:items-left">
+        <h2
+          class="text-3xl sm:text-3xl md:text-6xl font-extrabold mb-3 md:mb-6 leading-tight text-center bg-gradient-to-r from-[#FFD700] to-[#D4AF37] bg-clip-text text-transparent drop-shadow-[0_0_20px_#FFD70060]">
+          Experience Audio Without Limits
+        </h2>
+        <p class="text-gray-400 text-sm sm:text-base md:text-lg mb-3 text-center">
+          Unveil our 3D design — twist, turn, and explore every detail.
+        </p>
+      </div>
+
+      <button
+        class="bg-gradient-to-r from-[#FFD700] to-[#D4AF37] hover:from-[#D4AF37] hover:to-[#FFD700] text-black px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold transition-all shadow-[0_0_25px_#FFD70080]">
+        Shop Now
+      </button>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="./main.js"></script>
+  <script type="module" src="./three.js"></script>
+</body>
+
+</html>
