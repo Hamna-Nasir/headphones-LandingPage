@@ -294,37 +294,19 @@
     },
     {
       "doubleSided": true,
-      "emissiveFactor": [
-        0.0,
-        0.4233362862083955,
-        0.7052792130506433
-      ],
-      "name": "BlueLight",
+      "emissiveFactor": [0.8, 0.3, 0.5],
+      "name": "PinkLight",
       "pbrMetallicRoughness": {
-        "baseColorFactor": [
-          0.0,
-          0.5830405017641951,
-          1.0,
-          1.0
-        ],
+        "baseColorFactor": [0.956, 0.443, 0.674, 1.0],
         "metallicFactor": 0.0
       }
     },
     {
       "doubleSided": true,
-      "emissiveFactor": [
-        0.42322293367645875,
-        0.12997032812300374,
-        0.0
-      ],
-      "name": "OrangeLight",
+      "emissiveFactor": [0.7, 0.2, 0.4],
+      "name": "PinkLight2",
       "pbrMetallicRoughness": {
-        "baseColorFactor": [
-          1.0,
-          0.27748125106830696,
-          0.0010274254089153144,
-          1.0
-        ],
+        "baseColorFactor": [0.745, 0.094, 0.364, 1.0],
         "metallicFactor": 0.0
       }
     },

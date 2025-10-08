@@ -23,6 +23,8 @@ updateRendererSize();
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 
+
+
 // Lighting 
 scene.add(new THREE.AmbientLight(0xffffff, 1.8));
 const dirLight = new THREE.DirectionalLight(0xffffff, 3);

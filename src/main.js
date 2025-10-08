@@ -1,14 +1,13 @@
 
-// Navbar toggle
-const menuBtn = document.getElementById("menu-icon");
-const menuIcon = document.getElementById("menu-icon");
-const mobileMenu = document.getElementById("mobile-menu");
+const changeColor = document.querySelectorAll("#changeColor");
 
-if (menuBtn) {
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-    menuIcon.classList.toggle("fa-xmark");
-    menuIcon.classList.toggle("fa-bars");
+changeColor.forEach(item => {
+  item.addEventListener("mouseenter", () => {
+    item.style.color = "#db2777";
   });
-}
+  item.addEventListener("mouseleave", () => {
+    item.style.color = "";
+  });
+});
+
 
