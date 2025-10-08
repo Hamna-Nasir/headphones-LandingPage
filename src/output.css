@@ -653,7 +653,7 @@
   }
   .md\:h-\[\%\] {
     @media (width >= 48rem) {
-      height: %;
+      height: 0%;
     }
   }
   .md\:h-\[0\%\] {
